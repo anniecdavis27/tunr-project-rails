@@ -1,0 +1,357 @@
+  [1m[35m (207.6ms)[0m  [1m[35mCREATE DATABASE "tunr_app_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (100.8ms)[0m  [1m[35mCREATE DATABASE "tunr_app_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1874975070089793210)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSongs (20200806165345)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "title" character varying, "artist" character varying, "time" character varying, "favorite" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200806165345"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-08-06 16:55:35.464925"], ["updated_at", "2020-08-06 16:55:35.464925"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1874975070089793210)[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (65.7ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Seventeen"], ["artist", "Sharon Van Etten"], ["time", "3:33"], ["created_at", "2020-08-06 17:16:45.068812"], ["updated_at", "2020-08-06 17:16:45.068812"]]
+  [1m[35m (121.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Holocene"], ["artist", "Bon Iver"], ["time", "5:36"], ["created_at", "2020-08-06 17:16:45.259333"], ["updated_at", "2020-08-06 17:16:45.259333"]]
+  [1m[35m (32.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Movement"], ["artist", "Hozier"], ["time", "3:58"], ["created_at", "2020-08-06 17:16:45.294973"], ["updated_at", "2020-08-06 17:16:45.294973"]]
+  [1m[35m (30.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Slack Jaw"], ["artist", "Sylvan Esso"], ["time", "3:05"], ["created_at", "2020-08-06 17:16:45.328216"], ["updated_at", "2020-08-06 17:16:45.328216"]]
+  [1m[35m (32.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Everything Looks Better"], ["artist", "The Wild Reeds"], ["time", "5:28"], ["created_at", "2020-08-06 17:16:45.363949"], ["updated_at", "2020-08-06 17:16:45.363949"]]
+  [1m[35m (32.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Jack and Blow"], ["artist", "Atta Boy"], ["time", "3:42"], ["created_at", "2020-08-06 17:16:45.399479"], ["updated_at", "2020-08-06 17:16:45.399479"]]
+  [1m[35m (30.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+Started GET "/" for ::1 at 2020-08-06 13:23:41 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/anniedavis/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/anniedavis/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.0ms | Allocations: 409)
+Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 2255)
+
+
+Started GET "/songs" for ::1 at 2020-08-06 13:24:32 -0400
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 11.7ms | ActiveRecord: 7.3ms | Allocations: 6183)
+
+
+Started GET "/songs" for ::1 at 2020-08-06 13:25:01 -0400
+Processing by SongsController#index as */*
+  Parameters: {"tweet"=>{"title"=>"Goodbye Yellow Brick Road", "author"=>"Elton John", "content"=>"its a new life for me"}}
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1592)
+
+
+Started POST "/songs" for ::1 at 2020-08-06 13:26:01 -0400
+Processing by SongsController#create as */*
+  Parameters: {"song"=>{"title"=>"Goodbye Yellow Brick Road", "artist"=>"Elton John", "time"=>"4:00"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mSong Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Goodbye Yellow Brick Road"], ["artist", "Elton John"], ["time", "4:00"], ["created_at", "2020-08-06 17:26:01.570564"], ["updated_at", "2020-08-06 17:26:01.570564"]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+Completed 201 Created in 7ms (Views: 0.7ms | ActiveRecord: 1.5ms | Allocations: 2815)
+
+
+Started GET "/songs" for ::1 at 2020-08-06 13:26:08 -0400
+Processing by SongsController#index as */*
+  Parameters: {"song"=>{"title"=>"Goodbye Yellow Brick Road", "artist"=>"Elton John", "time"=>"4:00"}}
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 1737)
+
+
+Started GET "/songs/4" for ::1 at 2020-08-06 13:26:16 -0400
+Processing by SongsController#show as */*
+  Parameters: {"song"=>{"title"=>"Goodbye Yellow Brick Road", "artist"=>"Elton John", "time"=>"4:00"}, "id"=>"4"}
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 2256)
+
+
+Started GET "/songs/" for ::1 at 2020-08-06 13:26:24 -0400
+Processing by SongsController#index as */*
+  Parameters: {"song"=>{"title"=>"Goodbye Yellow Brick Road", "artist"=>"Elton John", "time"=>"4:00"}}
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1737)
+
+
+Started DELETE "/songs/7" for ::1 at 2020-08-06 13:26:32 -0400
+Processing by SongsController#destroy as */*
+  Parameters: {"song"=>{"title"=>"Goodbye Yellow Brick Road", "artist"=>"Elton John", "time"=>"4:00"}, "id"=>"7"}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:38:in `destroy'
+  [1m[36mSong Destroy (1.9ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/songs_controller.rb:38:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:38:in `destroy'
+Completed 204 No Content in 7ms (ActiveRecord: 2.9ms | Allocations: 2437)
+
+
+Started GET "/songs" for ::1 at 2020-08-06 13:26:40 -0400
+Processing by SongsController#index as */*
+  Parameters: {"song"=>{"title"=>"Goodbye Yellow Brick Road", "artist"=>"Elton John", "time"=>"4:00"}}
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1593)
+
+
+Started GET "//songs" for ::1 at 2020-08-06 14:36:42 -0400
+Started GET "//songs/faves" for ::1 at 2020-08-06 14:36:42 -0400
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"faves"}
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mSong Load (1.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.7ms | Allocations: 1741)
+
+
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+Completed 404 Not Found in 5ms (ActiveRecord: 1.8ms | Allocations: 2595)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=faves):
+  
+app/controllers/songs_controller.rb:44:in `set_song'
+Started GET "//songs" for ::1 at 2020-08-06 14:37:12 -0400
+Started GET "//songs/faves" for ::1 at 2020-08-06 14:37:12 -0400
+Processing by SongsController#index as HTML
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"faves"}
+  [1m[36mSong Load (1.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 1.4ms | Allocations: 1970)
+
+
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+Completed 404 Not Found in 11ms (ActiveRecord: 5.9ms | Allocations: 2367)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=faves):
+  
+app/controllers/songs_controller.rb:44:in `set_song'
+Started GET "/songs" for ::1 at 2020-08-06 14:38:02 -0400
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1588)
+
+
+Started GET "//songs" for ::1 at 2020-08-06 14:41:00 -0400
+Processing by SongsController#index as HTML
+Started GET "//songs/faves" for ::1 at 2020-08-06 14:41:00 -0400
+  [1m[36mSong Load (5.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 5.5ms | Allocations: 1891)
+
+
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"faves"}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms | Allocations: 628)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=faves):
+  
+app/controllers/songs_controller.rb:44:in `set_song'
+Started GET "//songs" for ::1 at 2020-08-06 14:42:03 -0400
+Started GET "//songs/faves" for ::1 at 2020-08-06 14:42:03 -0400
+Processing by SongsController#index as HTML
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"faves"}
+  [1m[36mSong Load (8.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mSong Load (5.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+Completed 200 OK in 14ms (Views: 2.8ms | ActiveRecord: 8.3ms | Allocations: 2381)
+
+
+Completed 404 Not Found in 9ms (ActiveRecord: 5.8ms | Allocations: 2143)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=faves):
+  
+app/controllers/songs_controller.rb:44:in `set_song'
+Started GET "//songs" for ::1 at 2020-08-06 14:42:26 -0400
+Started GET "//songs/faves" for ::1 at 2020-08-06 14:42:26 -0400
+Processing by SongsController#index as HTML
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"faves"}
+  [1m[36mSong Load (9.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 2.3ms | ActiveRecord: 9.9ms | Allocations: 1696)
+
+
+  [1m[36mSong Load (9.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+Completed 404 Not Found in 14ms (ActiveRecord: 9.6ms | Allocations: 2328)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=faves):
+  
+app/controllers/songs_controller.rb:44:in `set_song'
+Started GET "//songs" for ::1 at 2020-08-06 14:44:13 -0400
+Started GET "//songs/faves" for ::1 at 2020-08-06 14:44:13 -0400
+Processing by SongsController#index as HTML
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"faves"}
+  [1m[36mSong Load (10.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+Completed 200 OK in 13ms (Views: 2.6ms | ActiveRecord: 10.1ms | Allocations: 1944)
+
+
+Completed 404 Not Found in 5ms (ActiveRecord: 0.8ms | Allocations: 2327)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=faves):
+  
+app/controllers/songs_controller.rb:44:in `set_song'
+Started GET "//songs" for ::1 at 2020-08-06 14:46:40 -0400
+Started GET "//songs/faves" for ::1 at 2020-08-06 14:46:40 -0400
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#show as HTML
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#index as HTML
+  Parameters: {"id"=>"faves"}
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+Completed 404 Not Found in 9ms (ActiveRecord: 6.1ms | Allocations: 2458)
+
+
+Completed 200 OK in 18ms (Views: 8.7ms | ActiveRecord: 7.5ms | Allocations: 7359)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=faves):
+  
+app/controllers/songs_controller.rb:44:in `set_song'
+Started POST "//songs" for ::1 at 2020-08-06 14:49:53 -0400
+Processing by SongsController#create as HTML
+  Parameters: {"title"=>"Down in the Valley", "time"=>"5:04", "artist"=>"The Head and the Heart", "song"=>{"title"=>"Down in the Valley", "artist"=>"The Head and the Heart", "time"=>"5:04"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mSong Create (1.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "artist", "time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Down in the Valley"], ["artist", "The Head and the Heart"], ["time", "5:04"], ["created_at", "2020-08-06 18:49:53.981460"], ["updated_at", "2020-08-06 18:49:53.981460"]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+Completed 201 Created in 9ms (Views: 0.8ms | ActiveRecord: 3.4ms | Allocations: 2846)
+
+
+Started GET "//songs/faves" for ::1 at 2020-08-06 14:49:54 -0400
+Started GET "//songs" for ::1 at 2020-08-06 14:49:54 -0400
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"faves"}
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (2.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+  [1m[36mSong Load (1.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+Completed 404 Not Found in 5ms (ActiveRecord: 2.2ms | Allocations: 1035)
+
+
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 1.1ms | Allocations: 2785)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=faves):
+  
+app/controllers/songs_controller.rb:44:in `set_song'
+Started GET "//songs/faves" for ::1 at 2020-08-06 14:52:01 -0400
+Started PUT "//songs/undefined/fav" for ::1 at 2020-08-06 14:52:01 -0400
+Started GET "//songs" for ::1 at 2020-08-06 14:52:01 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/songs/undefined/fav"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"faves"}
+  [1m[36mSong Load (71.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+Completed 404 Not Found in 76ms (ActiveRecord: 71.5ms | Allocations: 17685)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=faves):
+  
+app/controllers/songs_controller.rb:44:in `set_song'
+Started GET "//songs" for ::1 at 2020-08-06 14:52:01 -0400
+Started GET "//songs/faves" for ::1 at 2020-08-06 14:52:01 -0400
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (1.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 1.3ms | Allocations: 3122)
+
+
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/controllers/songs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.8ms | Allocations: 3113)
+
+
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"faves"}
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:44:in `set_song'
+Completed 404 Not Found in 6ms (ActiveRecord: 4.0ms | Allocations: 4317)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=faves):
+  
+app/controllers/songs_controller.rb:44:in `set_song'
